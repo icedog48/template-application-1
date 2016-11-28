@@ -30,8 +30,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="RazorEngine, Version=3.9.3.0, Culture=neutral, PublicKeyToken=9ee697374c7e744a, processorArchitecture=MSIL">
+      <HintPath>..\packages\RazorEngine.3.9.3\lib\net45\RazorEngine.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.0.0\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,6 +49,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Models\Index.cshtml" />
+    <None Include="Core\Models\_Property.cshtml" />
+    <None Include="Core\Models\__NAME__.cs.cshtml" />
+    <None Include="Index.cshtml" />
+    <None Include="Migrations\Index.cshtml" />
+    <None Include="Migrations\_CreateColumn.cshtml" />
+    <None Include="Migrations\_CreateTable.cshtml" />
+    <None Include="Migrations\_Migrations.cs.cshtml" />
+    <None Include="NhibernateRepositories\Mappings\Index.cshtml" />
+    <None Include="NhibernateRepositories\Mappings\_PropertyMap.cshtml" />
+    <None Include="NhibernateRepositories\Mappings\__NAME__Map.cs.cshtml" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Core\Repositories\" />
+    <Folder Include="Core\Validations\" />
+    <Folder Include="WebApi\Controllers\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
