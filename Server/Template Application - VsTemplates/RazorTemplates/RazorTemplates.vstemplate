@@ -1,0 +1,51 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>Razor Templates</Name>
+    <Description>&lt;No description available&gt;</Description>
+    <ProjectType>CSharp</ProjectType>
+    <ProjectSubType>
+    </ProjectSubType>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>RazorTemplates</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <Icon>__TemplateIcon.ico</Icon>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="RazorTemplates.csproj" File="RazorTemplates.csproj" ReplaceParameters="true">
+      <ProjectItem ReplaceParameters="true" TargetFileName="app.config">app.config</ProjectItem>
+      <Folder Name="Core" TargetFolderName="Core">
+        <Folder Name="Models" TargetFolderName="Models">
+          <ProjectItem ReplaceParameters="true" TargetFileName="__NAME__.cs.cshtml">__NAME__.cs.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="_Property.cshtml">_Property.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Index.cshtml">Index.cshtml</ProjectItem>
+        </Folder>
+        <Folder Name="Repositories" TargetFolderName="Repositories" />
+        <Folder Name="Validations" TargetFolderName="Validations" />
+      </Folder>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Index.cshtml">Index.cshtml</ProjectItem>
+      <Folder Name="Migrations" TargetFolderName="Migrations">
+        <ProjectItem ReplaceParameters="true" TargetFileName="_CreateColumn.cshtml">_CreateColumn.cshtml</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="_CreateTable.cshtml">_CreateTable.cshtml</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="_Migrations.cs.cshtml">_Migrations.cs.cshtml</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Index.cshtml">Index.cshtml</ProjectItem>
+      </Folder>
+      <Folder Name="NhibernateRepositories" TargetFolderName="NhibernateRepositories">
+        <Folder Name="Mappings" TargetFolderName="Mappings">
+          <ProjectItem ReplaceParameters="true" TargetFileName="__NAME__Map.cs.cshtml">__NAME__Map.cs.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="_PropertyMap.cshtml">_PropertyMap.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Index.cshtml">Index.cshtml</ProjectItem>
+        </Folder>
+      </Folder>
+      <ProjectItem ReplaceParameters="true" TargetFileName="packages.config">packages.config</ProjectItem>
+      <Folder Name="Properties" TargetFolderName="Properties">
+        <ProjectItem ReplaceParameters="true" TargetFileName="AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>
+      </Folder>
+      <Folder Name="WebApi" TargetFolderName="WebApi">
+        <Folder Name="Controllers" TargetFolderName="Controllers" />
+      </Folder>
+    </Project>
+  </TemplateContent>
+</VSTemplate>

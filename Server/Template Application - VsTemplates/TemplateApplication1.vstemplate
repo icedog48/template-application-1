@@ -1,0 +1,45 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="ProjectGroup">
+  <TemplateData>
+    <Name>Template Application 1</Name>
+    <Description>&lt;&gt;</Description>
+    <ProjectType>CSharp</ProjectType>
+    <ProjectSubType>
+    </ProjectSubType>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>false</CreateNewFolder>
+    <DefaultName>MyApplication</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <Icon>__TemplateIcon.ico</Icon>
+  </TemplateData>
+  <TemplateContent>
+		<ProjectCollection>
+		
+			<SolutionFolder Name="0 - Code Generation">  			
+				<ProjectTemplateLink ProjectName="$projectname$.RazorTemplates" CopyParameters="true">
+					RazorTemplates\RazorTemplates.vstemplate
+				</ProjectTemplateLink>
+			</SolutionFolder>
+			
+			<SolutionFolder Name="1 - Infrastructure">  
+				<ProjectTemplateLink ProjectName="$projectname$.Migrations" CopyParameters="true">
+					Migrations\Migrations.vstemplate
+				</ProjectTemplateLink>
+				<ProjectTemplateLink ProjectName="$projectname$.Core" CopyParameters="true">
+					Core\Core.vstemplate
+				</ProjectTemplateLink>
+				<ProjectTemplateLink ProjectName="$projectname$.NhibernateRepositories" CopyParameters="true">
+					NhibernateRepositories\NhibernateRepositories.vstemplate
+				</ProjectTemplateLink>
+			</SolutionFolder>
+			
+			<SolutionFolder Name="2 - API">  
+				<ProjectTemplateLink ProjectName="$projectname$.WebApi" CopyParameters="true">
+					WebApi\WebApi.vstemplate
+				</ProjectTemplateLink>
+			</SolutionFolder>
+			
+        </ProjectCollection>
+  </TemplateContent>
+</VSTemplate>
