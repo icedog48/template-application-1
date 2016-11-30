@@ -1,4 +1,6 @@
 ﻿using Autofac;
+using FluentMigrator.Runner.Processors.SqlServer;
+using Migrations.Helpers;
 using NHibernate;
 using NhibernateRepositories.Helpers;
 using System.Configuration;
@@ -10,6 +12,8 @@ namespace WebApi.Infrastructure.Autofac.Modules
         protected override void Load(ContainerBuilder builder)
         {
             var connectionString = ConfigurationManager.ConnectionStrings[0].ConnectionString;
+
+            Runner.MigrateToLatest<SqlServer2014ProcessorFactory>(connectionString);
 
             var sessionFactory = SessionFactoryHelper.GetMsSqlServerSessionFactory(connectionString);
 
