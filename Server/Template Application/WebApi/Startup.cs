@@ -1,18 +1,9 @@
-﻿using NhibernateRepositories.Helpers;
-using WebApi.Infrastructure.Formatters;
-using WebApi.Infrastructure.OAuth2.ServerProviders;
+﻿using WebApi.Infrastructure.OAuth2.ServerProviders;
 using Autofac;
 using Autofac.Integration.WebApi;
-using NHibernate;
 using Owin;
-using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
-using System.Reflection;
-using System.Web;
 using System.Web.Http;
-using System.Web.Http.Cors;
+using WebApi.Infrastructure.Autofac.Helpers;
 
 namespace WebApi
 {
@@ -20,67 +11,29 @@ namespace WebApi
     {
         public void Configuration(IAppBuilder app)
         {
-            var container = CreateAutofacContainer();
+            var container = ContainerBuilderHelper.CreateAutofacContainer();
 
-            var config = CreateHttpConfiguration(container);
-
-            // Register the Autofac middleware FIRST, then the Autofac Web API middleware,
-            // and finally the standard Web API middleware.
-            app.UseAutofacMiddleware(container);
-
-            app.UseAutofacWebApi(config);
-
-            app.ConfigureOAuth(new AuthorizationServerProvider(), "/api/token");
-
-            app.UseWebApi(config);
-
-            config.EnsureInitialized();
-        }
-
-        public virtual HttpConfiguration CreateHttpConfiguration(IContainer container)
-        {
-            var config = new HttpConfiguration();
-
-            var cors = new EnableCorsAttribute("*", "*", "*");
-            config.EnableCors(cors);
-
-            // Web API routes
-            config.MapHttpAttributeRoutes();
-
-            // Convention-based routing.
-            config.Routes.MapHttpRoute(
-                name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional }
-            );
-
-            config.Formatters.Add(new BrowserJsonFormatter());
+            var config = container.Resolve<HttpConfiguration>();
 
             // Set the dependency resolver to be Autofac.
             config.DependencyResolver = new AutofacWebApiDependencyResolver(container);
 
-            return config;
-        }
+            // Register the Autofac middleware FIRST, then the Autofac Web API middleware,
+            // and finally the standard Web API middleware.
 
-        public virtual IContainer CreateAutofacContainer()
-        {
-            var builder = new ContainerBuilder();
-            builder.RegisterApiControllers(Assembly.GetCallingAssembly());
+            //Autofac middleware
+            app.UseAutofacMiddleware(container);
 
-            RegisterNhibernateSessionFactory(builder);
+            //Autofac Web API middleware
+            app.UseAutofacWebApi(config);
 
-            return builder.Build();
-        }
+            //standard Web API middleware
+            app.UseWebApi(config);
 
-        public virtual void RegisterNhibernateSessionFactory(ContainerBuilder builder)
-        {
-            var connectionString = ConfigurationManager.ConnectionStrings[0].ConnectionString;
+            //Configure OAUTH2 authentication provider
+            app.ConfigureOAuth(new AuthorizationServerProvider(), "/api/token");
 
-            var sessionFactory = SessionFactoryHelper.GetMsSqlServerSessionFactory(connectionString);
-
-            builder.RegisterInstance(sessionFactory);
-
-            builder.Register(context => context.Resolve<ISessionFactory>().OpenSession()).InstancePerRequest();
+            config.EnsureInitialized();
         }
     }
 }

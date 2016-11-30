@@ -159,6 +159,11 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Infrastructure\Autofac\Helpers\ContainerBuilderHelper.cs" />
+    <Compile Include="Infrastructure\Autofac\Modules\HttpConfigurationModule.cs" />
+    <Compile Include="Infrastructure\Autofac\Modules\NhibernateRepositoriesModule.cs" />
+    <Compile Include="Infrastructure\Autofac\Modules\NhibernateSessionFactoryModule.cs" />
+    <Compile Include="Infrastructure\Autofac\Modules\ServicesModule.cs" />
     <Compile Include="Infrastructure\Formatters\BrowserJsonFormatter.cs" />
     <Compile Include="Infrastructure\OAuth2\ServerProviders\AuthorizationServerProvider.cs" />
     <Compile Include="Infrastructure\Owin\Extensions\IAppBuilderExtensions.cs" />
