@@ -9,8 +9,8 @@
 
 @inherits RazorEngine.Templating.Code4UTemplateBase<Project>
 
-@Include(@"Models\Index.cshtml", Model, typeof(Project))
+@Include(@"Core\Models\Index.cshtml", Model, typeof(Project))
 
-@Include(@"Mappings\Index.cshtml", Model, typeof(Project))
+@Include(@"NhibernateRepositories\Mappings\Index.cshtml", Model, typeof(Project))
 
 @Include(@"Migrations\Index.cshtml", Model, typeof(Project))

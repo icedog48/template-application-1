@@ -1,7 +1,7 @@
 <VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
   <TemplateData>
     <Name>Razor Templates</Name>
-    <Description>&lt;No description available&gt;</Description>
+    <Description>Projeto contendo os templates para geração de códigos da solution</Description>
     <ProjectType>CSharp</ProjectType>
     <ProjectSubType>
     </ProjectSubType>
@@ -18,7 +18,7 @@
       <ProjectItem ReplaceParameters="true" TargetFileName="app.config">app.config</ProjectItem>
       <Folder Name="Core" TargetFolderName="Core">
         <Folder Name="Models" TargetFolderName="Models">
-          <ProjectItem ReplaceParameters="true" TargetFileName="__NAME__.cs.cshtml">__NAME__.cs.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="_Entity.cs.cshtml">_Entity.cs.cshtml</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="_Property.cshtml">_Property.cshtml</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="Index.cshtml">Index.cshtml</ProjectItem>
         </Folder>
@@ -34,7 +34,7 @@
       </Folder>
       <Folder Name="NhibernateRepositories" TargetFolderName="NhibernateRepositories">
         <Folder Name="Mappings" TargetFolderName="Mappings">
-          <ProjectItem ReplaceParameters="true" TargetFileName="__NAME__Map.cs.cshtml">__NAME__Map.cs.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="_EntityMap.cs.cshtml">_EntityMap.cs.cshtml</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="_PropertyMap.cshtml">_PropertyMap.cshtml</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="Index.cshtml">Index.cshtml</ProjectItem>
         </Folder>

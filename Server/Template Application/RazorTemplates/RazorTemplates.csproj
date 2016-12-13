@@ -58,7 +58,7 @@
     <None Include="app.config" />
     <None Include="Core\Models\Index.cshtml" />
     <None Include="Core\Models\_Property.cshtml" />
-    <None Include="Core\Models\__NAME__.cs.cshtml" />
+    <None Include="Core\Models\_Entity.cs.cshtml" />
     <None Include="Index.cshtml" />
     <None Include="Migrations\Index.cshtml" />
     <None Include="Migrations\_CreateColumn.cshtml" />
@@ -66,7 +66,7 @@
     <None Include="Migrations\_Migrations.cs.cshtml" />
     <None Include="NhibernateRepositories\Mappings\Index.cshtml" />
     <None Include="NhibernateRepositories\Mappings\_PropertyMap.cshtml" />
-    <None Include="NhibernateRepositories\Mappings\__NAME__Map.cs.cshtml" />
+    <None Include="NhibernateRepositories\Mappings\_EntityMap.cs.cshtml" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

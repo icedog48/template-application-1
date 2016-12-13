@@ -11,14 +11,14 @@
 @inherits RazorEngine.Templating.Code4UTemplateBase<Project>
 
 @{ 
-    var filename = Path.Combine(Model.TemplateFolder, @"Mappings\__NAME__Map.cs.cshtml");
+    var filename = Path.Combine(Model.TemplateFolder, @"NhibernateRepositories\Mappings\_EntityMap.cs.cshtml");
 
     foreach (var entity in Model.Entities)
     {
         var generatedCode = Include(filename, entity, typeof(Entity)).ToString();
 
-        var generatedFileName = filename.Replace(Model.TemplateFolder + "\\", string.Empty)
-                                        .Replace("__NAME__", entity.Name)
+        var generatedFileName = filename.Replace(Model.TemplateFolder + "\\", Model.Name)
+                                        .Replace("_EntityMap", entity.Name)
                                         .Replace(".cshtml", string.Empty);
 
         generatedFileName = Path.Combine(Model.GeneratedCodeFolder, generatedFileName);
