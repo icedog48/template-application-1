@@ -56,6 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="Code4U Project.4u" />
     <None Include="Core\Models\Index.cshtml" />
     <None Include="Core\Models\_Property.cshtml" />
     <None Include="Core\Models\_Entity.cs.cshtml" />
