@@ -1,0 +1,20 @@
+﻿@using System
+@using System.Collections.Generic
+@using System.Linq
+@using System.Text
+@using System.IO
+@using RazorEngine
+@using RazorEngine.Templating
+@using Code4U.Models
+@inherits RazorEngine.Templating.Code4UTemplateBase<Property>
+@if (Model.Type.Equals("string", StringComparison.InvariantCultureIgnoreCase))
+{
+@:.NotNull().NotEmpty();
+}
+else if (!Model.Type.Equals("int", StringComparison.InvariantCultureIgnoreCase) ||
+         !Model.Type.Equals("bool", StringComparison.InvariantCultureIgnoreCase) ||
+         !Model.Type.Equals("decimal", StringComparison.InvariantCultureIgnoreCase) ||
+         !Model.Type.Equals("double", StringComparison.InvariantCultureIgnoreCase))
+{
+    @:.NotNull();
+}

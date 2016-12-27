@@ -19,7 +19,7 @@
         <ProjectItem ReplaceParameters="true" TargetFileName="SessionFactoryHelper.cs">SessionFactoryHelper.cs</ProjectItem>
       </Folder>
       <Folder Name="Mappings" TargetFolderName="Mappings">
-        <ProjectItem ReplaceParameters="true" TargetFileName="EntityMap.cs">EntityMap.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="_EntityMap.cs">_EntityMap.cs</ProjectItem>
       </Folder>
       <ProjectItem ReplaceParameters="true" TargetFileName="packages.config">packages.config</ProjectItem>
       <Folder Name="Properties" TargetFolderName="Properties">

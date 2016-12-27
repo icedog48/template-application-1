@@ -1,0 +1,61 @@
+﻿@using System
+@using System.Collections.Generic
+@using System.Linq
+@using System.Text
+@using System.IO
+@using RazorEngine
+@using RazorEngine.Templating
+@using Code4U.Models
+
+@inherits RazorEngine.Templating.Code4UTemplateBase<Entity>
+using LarOnline.Core.Models;
+using LarOnline.Core.Services;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Web.Http;
+@{ 
+    var pascalModelName = Model.Name.ToPascalCase();
+    var camelModelName = Model.Name.ToCamelCase();
+}
+
+namespace @(Model.Project.Name).WebApi.Controllers
+{
+    public class @(pascalModelName)Controller : ApiController
+    {
+        private readonly IService<@(pascalModelName)> @(camelModelName)Service;
+
+        public @(pascalModelName)Controller(IService<@(pascalModelName)> @(camelModelName)Service)
+        {
+            this.@(camelModelName)Service = @(camelModelName)Service;
+        }
+
+        [HttpGet]
+        public IHttpActionResult Get(int id)
+        {
+            var @(camelModelName) = this.@(camelModelName)Service.Get(id);
+
+            return Ok(@(camelModelName));
+        }
+
+        [HttpPost]
+        public IHttpActionResult Post(@(pascalModelName) @(camelModelName))
+        {
+            this.@(camelModelName)Service.Save(@(camelModelName));
+
+            return Ok(@(camelModelName));
+        }
+
+        [HttpDelete]
+        public IHttpActionResult Delete(int id)
+        {
+            var @(camelModelName) = this.@(camelModelName)Service.Get(id);
+
+            this.@(camelModelName)Service.Remove(@(camelModelName));
+
+            return Ok(id);
+        }
+    }
+}

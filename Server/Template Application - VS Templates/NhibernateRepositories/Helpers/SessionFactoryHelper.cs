@@ -20,7 +20,7 @@ namespace $safeprojectname$.Helpers
         {
             return Fluently.Configure()
                             .Database(persistenceConfigurer)
-                            .Mappings(m => m.FluentMappings.AddFromAssembly(typeof(EntityMap<>).Assembly))
+                            .Mappings(m => m.FluentMappings.AddFromAssembly(typeof(_EntityMap<>).Assembly))
                             .BuildSessionFactory();
         }
     }

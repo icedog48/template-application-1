@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace NhibernateRepositories.Repositories
 {
-    public class NhibernateRepository<TEntity> : IRepository<TEntity> where TEntity : Entity
+    public class NhibernateRepository<TEntity> : IRepository<TEntity> where TEntity : _Entity
     {
         protected readonly ISession session;
 

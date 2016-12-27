@@ -52,28 +52,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions\RazorEngineExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="Code4U Project.4u" />
     <None Include="Core\Models\Index.cshtml" />
-    <None Include="Core\Models\_Property.cshtml" />
     <None Include="Core\Models\_Entity.cs.cshtml" />
+    <None Include="Core\Models\_Property.cshtml" />
+    <None Include="Core\Validations\Index.cshtml" />
+    <None Include="Core\Validations\_EntityValidator.cs.cshtml" />
+    <None Include="Core\Validations\_PropertyRule.cshtml" />
     <None Include="Index.cshtml" />
     <None Include="Migrations\Index.cshtml" />
     <None Include="Migrations\_CreateColumn.cshtml" />
     <None Include="Migrations\_CreateTable.cshtml" />
     <None Include="Migrations\_Migrations.cs.cshtml" />
     <None Include="NhibernateRepositories\Mappings\Index.cshtml" />
-    <None Include="NhibernateRepositories\Mappings\_PropertyMap.cshtml" />
     <None Include="NhibernateRepositories\Mappings\_EntityMap.cs.cshtml" />
+    <None Include="NhibernateRepositories\Mappings\_PropertyMap.cshtml" />
     <None Include="packages.config" />
+    <None Include="WebApi\Controllers\Index.cshtml" />
+    <None Include="WebApi\Controllers\_Controller.cs.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Core\Repositories\" />
-    <Folder Include="Core\Validations\" />
-    <Folder Include="WebApi\Controllers\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

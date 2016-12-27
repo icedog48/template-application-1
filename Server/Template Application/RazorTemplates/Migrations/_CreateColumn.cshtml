@@ -27,11 +27,15 @@
     }
     else if (Model.Type == "bool")
     {
-        typeMethod = "AsBoolen()";
+        typeMethod = "AsBoolean()";
     }
-    else if (Model.Type == "Datetime")
+    else if (Model.Type == "DateTime")
     {
-        typeMethod = "AsDatetime()";
+        typeMethod = "AsDateTime()";
+    }
+    else if (Model.Type == "TimeSpan")
+    {
+        typeMethod = "AsTime()";
     }
 
     var nullableMethod = ".NotNullable()";

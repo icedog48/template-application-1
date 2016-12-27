@@ -1,5 +1,7 @@
-﻿{
-  "Name": "$ext_projectname$",
+{
+  "Name": "Code4U_Project",
   "TemplateFolder": "",
-  "GeneratedCodeFolder": "../"
+  "GeneratedCodeFolder": "..\\",
+  "FromAssembly": null,
+  "FromDatabase": null
 }

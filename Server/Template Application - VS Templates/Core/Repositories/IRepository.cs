@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace $safeprojectname$.Repositories
 {
-    public interface IRepository<TEntity> where TEntity : Entity
+    public interface IRepository<TEntity> where TEntity : _Entity
     {
         TEntity Get(int id);
 

@@ -17,8 +17,8 @@
     {
         var generatedCode = Include(filename, entity, typeof(Entity)).ToString();
 
-        var generatedFileName = filename.Replace(Model.TemplateFolder + "\\", Model.Name)
-                                        .Replace("_EntityMap", entity.Name)
+        var generatedFileName = filename.Replace(Model.TemplateFolder + "\\", Model.Name + ".")
+                                        .Replace("_EntityMap", entity.Name + "Map")
                                         .Replace(".cshtml", string.Empty);
 
         generatedFileName = Path.Combine(Model.GeneratedCodeFolder, generatedFileName);

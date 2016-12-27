@@ -1,4 +1,4 @@
-﻿using Core.Models;
+using $ext_projectname$.Core.Models;
 using FluentNHibernate.Mapping;
 using System;
 using System.Collections.Generic;
@@ -6,11 +6,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NhibernateRepositories.Mappings
+namespace $safeprojectname$.Mappings
 {
-    public abstract class EntityMap<TEntity> : ClassMap<TEntity> where TEntity : Entity
+    public abstract class _EntityMap<TEntity> : ClassMap<TEntity> where TEntity : _Entity
     {
-        public EntityMap()
+        public _EntityMap()
         {
             Id(x => x.Id);
         }

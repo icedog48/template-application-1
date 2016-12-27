@@ -1,7 +1,7 @@
 <VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
   <TemplateData>
     <Name>Razor Templates</Name>
-    <Description>Project with templates for code generation</Description>
+    <Description>&lt;No description available&gt;</Description>
     <ProjectType>CSharp</ProjectType>
     <ProjectSubType>
     </ProjectSubType>
@@ -16,7 +16,7 @@
   <TemplateContent>
     <Project TargetFileName="RazorTemplates.csproj" File="RazorTemplates.csproj" ReplaceParameters="true">
       <ProjectItem ReplaceParameters="true" TargetFileName="app.config">app.config</ProjectItem>
-      <ProjectItem ReplaceParameters="true" TargetFileName="Code4U Project.4u">Code4U Project.4u</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="Code4U Project.4u">Code4U Project.4u</ProjectItem>
       <Folder Name="Core" TargetFolderName="Core">
         <Folder Name="Models" TargetFolderName="Models">
           <ProjectItem ReplaceParameters="true" TargetFileName="_Entity.cs.cshtml">_Entity.cs.cshtml</ProjectItem>
@@ -24,7 +24,14 @@
           <ProjectItem ReplaceParameters="true" TargetFileName="Index.cshtml">Index.cshtml</ProjectItem>
         </Folder>
         <Folder Name="Repositories" TargetFolderName="Repositories" />
-        <Folder Name="Validations" TargetFolderName="Validations" />
+        <Folder Name="Validations" TargetFolderName="Validations">
+          <ProjectItem ReplaceParameters="true" TargetFileName="_EntityValidator.cs.cshtml">_EntityValidator.cs.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="_PropertyRule.cshtml">_PropertyRule.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Index.cshtml">Index.cshtml</ProjectItem>
+        </Folder>
+      </Folder>
+      <Folder Name="Extensions" TargetFolderName="Extensions">
+        <ProjectItem ReplaceParameters="true" TargetFileName="RazorEngineExtensions.cs">RazorEngineExtensions.cs</ProjectItem>
       </Folder>
       <ProjectItem ReplaceParameters="true" TargetFileName="Index.cshtml">Index.cshtml</ProjectItem>
       <Folder Name="Migrations" TargetFolderName="Migrations">
@@ -45,7 +52,10 @@
         <ProjectItem ReplaceParameters="true" TargetFileName="AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>
       </Folder>
       <Folder Name="WebApi" TargetFolderName="WebApi">
-        <Folder Name="Controllers" TargetFolderName="Controllers" />
+        <Folder Name="Controllers" TargetFolderName="Controllers">
+          <ProjectItem ReplaceParameters="true" TargetFileName="_Controller.cs.cshtml">_Controller.cs.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Index.cshtml">Index.cshtml</ProjectItem>
+        </Folder>
       </Folder>
     </Project>
   </TemplateContent>

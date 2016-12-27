@@ -15,7 +15,7 @@
 
     var generatedCode = Include(filename, Model, typeof(Project)).ToString();
 
-    var generatedFileName = filename.Replace(Model.TemplateFolder + "\\", Model.Name)
+    var generatedFileName = filename.Replace(Model.TemplateFolder + "\\", Model.Name + ".")
                                     .Replace("_Migrations", Model.Name + "Migrations")
                                     .Replace(".cshtml", string.Empty);
 

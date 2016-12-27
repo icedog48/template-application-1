@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace $safeprojectname$.Services.Default
 {
-    public class DefaultService<TEntity> : IService<TEntity> where TEntity : Entity
+    public class DefaultService<TEntity> : IService<TEntity> where TEntity : _Entity
     {
         private readonly IRepository<TEntity> repository;
 
@@ -19,6 +19,11 @@ namespace $safeprojectname$.Services.Default
         {
             this.repository = repository;
             this.validator = validator;
+        }
+
+        public TEntity Get(int id)
+        {
+            return this.repository.Get(id);
         }
 
         public void Remove(TEntity entity)
