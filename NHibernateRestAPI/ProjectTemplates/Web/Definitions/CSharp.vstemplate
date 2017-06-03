@@ -1,0 +1,39 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="ProjectGroup">
+  <TemplateData>
+    <Name>Web Api + NHibernate</Name>
+    <Description>Template for web api application using nhibernate</Description>
+    <ProjectType>CSharp</ProjectType>
+    <DefaultName>MyApplication</DefaultName>
+    <SortOrder>5000</SortOrder>
+    <Icon>__TemplateIcon.ico</Icon>    
+  </TemplateData>
+
+  <TemplateContent>
+    <ProjectCollection>
+      
+      <SolutionFolder Name="1 - Infrastructure">
+        <ProjectTemplateLink ProjectName="$safeprojectname$.Core" >
+          Template.Core\MyTemplate.vstemplate
+        </ProjectTemplateLink>
+        <ProjectTemplateLink ProjectName="$safeprojectname$.Migrations" >
+          Template.Migrations\MyTemplate.vstemplate
+        </ProjectTemplateLink>
+        <ProjectTemplateLink ProjectName="$safeprojectname$.ORM.NHibernate" >
+          Template.ORM.NHibernate\MyTemplate.vstemplate
+        </ProjectTemplateLink>
+      </SolutionFolder>
+      
+      <SolutionFolder Name="2 - API">
+        <ProjectTemplateLink ProjectName="$safeprojectname$.RestAPI" >
+          Template.RestAPI\MyTemplate.vstemplate
+        </ProjectTemplateLink>
+      </SolutionFolder>
+
+    </ProjectCollection>
+  </TemplateContent>
+
+  <WizardExtension>
+    <Assembly>TemplateBuilder, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>TemplateBuilder.SolutionWizard</FullClassName>
+  </WizardExtension>
+</VSTemplate>
