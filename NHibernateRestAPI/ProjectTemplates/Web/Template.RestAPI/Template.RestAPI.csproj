@@ -73,6 +73,10 @@
       <HintPath>..\packages\FluentNHibernate.2.0.3.0\lib\net40\FluentNHibernate.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="FluentValidation, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.7.0.2\lib\net45\FluentValidation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Iesi.Collections, Version=4.0.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
       <HintPath>..\packages\Iesi.Collections.4.0.1.4000\lib\net40\Iesi.Collections.dll</HintPath>
       <Private>True</Private>
@@ -161,7 +165,9 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Infrastructure\Autofac\Filters\AutofacTransactionFilter.cs" />
     <Compile Include="Infrastructure\Autofac\Helpers\ContainerBuilderHelper.cs" />
+    <Compile Include="Infrastructure\Autofac\Modules\AutofacRequestFiltersModule.cs" />
     <Compile Include="Infrastructure\Autofac\Modules\HttpConfigurationModule.cs" />
     <Compile Include="Infrastructure\Autofac\Modules\NhibernateRepositoriesModule.cs" />
     <Compile Include="Infrastructure\Autofac\Modules\NhibernateSessionFactoryModule.cs" />

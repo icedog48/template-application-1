@@ -6,7 +6,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
 
-namespace RestAPI.Infrastructure.OAuth2.ServerProviders
+namespace Template.RestAPI.Infrastructure.OAuth2.ServerProviders
 {
     public class AuthorizationServerProvider : OAuthAuthorizationServerProvider
     {

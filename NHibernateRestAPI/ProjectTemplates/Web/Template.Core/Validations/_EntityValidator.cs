@@ -1,13 +1,13 @@
 ﻿using FluentValidation;
 using FluentValidation.Results;
-using Core.Models;
+using Template.Core.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Core.Validations
+namespace Template.Core.Validations
 {
     public abstract class _EntityValidator<TEntity> : AbstractValidator<TEntity> where TEntity : _Entity
     {

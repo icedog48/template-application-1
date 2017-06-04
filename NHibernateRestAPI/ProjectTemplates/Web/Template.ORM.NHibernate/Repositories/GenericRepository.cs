@@ -1,13 +1,8 @@
-﻿using Core.Models;
-using Core.Repositories;
+﻿using Template.Core.Models;
+using Template.Core.Repositories;
 using NHibernate;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace ORM.NHibernate.Repositories
+namespace Template.ORM.NHibernate.Repositories
 {
     public class GenericRepository<TEntity> : IRepository<TEntity> where TEntity : _Entity
     {

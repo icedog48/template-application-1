@@ -1,19 +1,31 @@
 ﻿using Autofac;
-using Core.Services;
+using Template.Core.Models;
+using Template.Core.Services;
+using Template.Core.Services.Default;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace RestAPI.Infrastructure.Autofac.Modules
+namespace Template.RestAPI.Infrastructure.Autofac.Modules
 {
     public class ServicesModule : Module
     {
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterGeneric(typeof(IService<>)).AsImplementedInterfaces();
+            builder.RegisterGeneric(typeof(DefaultService<>)).AsImplementedInterfaces();
 
-            //TODO: Register the specific service implementations here
+            //Registra implementações fechadas (não genéricas) de IService
+            builder.RegisterAssemblyTypes(typeof(_Entity).Assembly)
+                        .Where(t => t.Name.EndsWith("Service"))
+                            .AsImplementedInterfaces()
+                                .InstancePerLifetimeScope();
+
+            //Registra implementações fechadas (não genéricas) de IService
+            builder.RegisterAssemblyTypes(typeof(_Entity).Assembly)
+                        .Where(t => t.Name.EndsWith("Validator"))
+                            .AsImplementedInterfaces()
+                                .InstancePerLifetimeScope();
 
             base.Load(builder);
         }

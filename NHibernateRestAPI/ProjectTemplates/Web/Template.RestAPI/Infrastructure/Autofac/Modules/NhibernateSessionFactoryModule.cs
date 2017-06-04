@@ -1,11 +1,12 @@
 ﻿using Autofac;
 using FluentMigrator.Runner.Processors.SqlServer;
+using Template.ORM.NHibernate.Repositories;
 using Migrations.Helpers;
 using NHibernate;
-using ORM.NHibernate.Helpers;
+using Template.ORM.NHibernate.Helpers;
 using System.Configuration;
 
-namespace RestAPI.Infrastructure.Autofac.Modules
+namespace Template.RestAPI.Infrastructure.Autofac.Modules
 {
     public class NhibernateSessionFactoryModule : Module
     {
@@ -19,7 +20,17 @@ namespace RestAPI.Infrastructure.Autofac.Modules
 
             builder.RegisterInstance(sessionFactory);
 
-            builder.Register(context => context.Resolve<ISessionFactory>().OpenSession()).InstancePerRequest();
+            builder.Register(context => 
+                    {
+                        var session = context.Resolve<ISessionFactory>().OpenSession();
+
+                        session.FlushMode = FlushMode.Commit;
+
+                        return session;
+                    })
+                   .InstancePerRequest();
+
+            builder.RegisterType<NHibernateUnitOfWork>().AsImplementedInterfaces().InstancePerRequest();
 
             base.Load(builder);
         }

@@ -1,18 +1,22 @@
 ﻿using Autofac;
-using Core.Repositories;
-using ORM.NHibernate;
-using ORM.NHibernate.Helpers;
+using Template.Core.Repositories;
+using Template.ORM.NHibernate.Repositories;
+using Template.ORM.NHibernate;
+using Template.ORM.NHibernate.Helpers;
+using Template.ORM.NHibernate.Repositories;
 using System.Configuration;
 
-namespace RestAPI.Infrastructure.Autofac.Modules
+namespace Template.RestAPI.Infrastructure.Autofac.Modules
 {
     public class NhibernateRepositoriesModule : Module
     {
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterGeneric(typeof(IRepository<>)).AsImplementedInterfaces();
+            builder.RegisterGeneric(typeof(GenericRepository<>)).AsImplementedInterfaces();
 
-            //TODO: Register the specific repository implementations here
+            builder.RegisterAssemblyTypes(typeof(GenericRepository<>).Assembly)
+                        .Where(t => t.Name.EndsWith("Repository"))
+                            .AsImplementedInterfaces();
 
             base.Load(builder);
         }

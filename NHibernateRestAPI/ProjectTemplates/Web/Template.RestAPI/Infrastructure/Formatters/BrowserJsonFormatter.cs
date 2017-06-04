@@ -6,7 +6,7 @@ using System.Net.Http.Formatting;
 using System.Net.Http.Headers;
 using System.Web;
 
-namespace RestAPI.Infrastructure.Formatters
+namespace Template.RestAPI.Infrastructure.Formatters
 {
     public class BrowserJsonFormatter : JsonMediaTypeFormatter
     {

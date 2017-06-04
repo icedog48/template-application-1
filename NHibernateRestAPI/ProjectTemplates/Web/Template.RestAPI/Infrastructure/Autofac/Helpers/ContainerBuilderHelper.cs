@@ -1,6 +1,6 @@
 ﻿using Autofac;
 
-namespace RestAPI.Infrastructure.Autofac.Helpers
+namespace Template.RestAPI.Infrastructure.Autofac.Helpers
 {
     public static class ContainerBuilderHelper
     {

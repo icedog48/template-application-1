@@ -28,10 +28,7 @@ namespace Migrations.Helpers
 
             var assembly = typeof(Runner).Assembly;
 
-            var migrationContext = new RunnerContext(announcer)
-            {
-                Namespace = "MyApp.Sql.Migrations"
-            };
+            var migrationContext = new RunnerContext(announcer);
 
             if (options == null) options = new MigrationOptions { PreviewOnly = false, Timeout = 60 };
 

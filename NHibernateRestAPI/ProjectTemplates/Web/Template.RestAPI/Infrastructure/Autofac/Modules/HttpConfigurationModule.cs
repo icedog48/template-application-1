@@ -2,9 +2,16 @@
 using Autofac.Integration.WebApi;
 using System.Web.Http;
 using System.Web.Http.Cors;
-using RestAPI.Infrastructure.Formatters;
+using Template.RestAPI.Infrastructure.Formatters;
+using System.Linq;
+using System.Web.Http.Filters;
+using System.Collections.Generic;
+using System.Web.Http.Controllers;
+using Template.RestAPI.Infrastructure.Filters;
+using Template.Core.Repositories;
+using Template.Core.Models;
 
-namespace RestAPI.Infrastructure.Autofac.Modules
+namespace Template.RestAPI.Infrastructure.Autofac.Modules
 {
     public class HttpConfigurationModule : Module
     {
@@ -24,12 +31,14 @@ namespace RestAPI.Infrastructure.Autofac.Modules
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
-            
+
             config.Formatters.Add(new BrowserJsonFormatter());
-            
-            builder.RegisterInstance<HttpConfiguration>(config);
 
             builder.RegisterApiControllers(ThisAssembly);
+
+            builder.RegisterInstance<HttpConfiguration>(config);
+
+            builder.RegisterWebApiFilterProvider(config);
 
             base.Load(builder);
         }

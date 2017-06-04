@@ -1,9 +1,9 @@
-﻿using ORM.NHibernate.Mappings;
+﻿using Template.ORM.NHibernate.Mappings;
 using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
 using NHibernate;
 
-namespace ORM.NHibernate.Helpers
+namespace Template.ORM.NHibernate.Helpers
 {
     public static class SessionFactoryHelper
     {

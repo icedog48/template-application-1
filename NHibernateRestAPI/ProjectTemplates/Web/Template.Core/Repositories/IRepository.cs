@@ -1,11 +1,6 @@
-﻿using Core.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Template.Core.Models;
 
-namespace Core.Repositories
+namespace Template.Core.Repositories
 {
     public interface IRepository<TEntity> where TEntity : _Entity
     {

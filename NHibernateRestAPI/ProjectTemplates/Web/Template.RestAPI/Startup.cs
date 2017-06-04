@@ -1,11 +1,12 @@
-﻿using RestAPI.Infrastructure.OAuth2.ServerProviders;
+﻿
 using Autofac;
 using Autofac.Integration.WebApi;
 using Owin;
 using System.Web.Http;
-using RestAPI.Infrastructure.Autofac.Helpers;
+using Template.RestAPI.Infrastructure.Autofac.Helpers;
+using Template.RestAPI.Infrastructure.OAuth2.ServerProviders;
 
-namespace RestAPI
+namespace Template.RestAPI
 {
     public partial class Startup
     {

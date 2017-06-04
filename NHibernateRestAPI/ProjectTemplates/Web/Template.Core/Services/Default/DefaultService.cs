@@ -1,13 +1,8 @@
-﻿using Core.Models;
-using Core.Repositories;
+﻿using Template.Core.Models;
+using Template.Core.Repositories;
 using FluentValidation;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Core.Services.Default
+namespace Template.Core.Services.Default
 {
     public class DefaultService<TEntity> : IService<TEntity> where TEntity : _Entity
     {
